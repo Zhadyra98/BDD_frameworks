@@ -1,5 +1,6 @@
 package steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,12 +21,16 @@ public class SearchTestSteps {
         public void enter_request_in_shop_page() {
             new ShopPage(driver).selectAlmatyAsCity().fillSearchInput("iphone12");
         }
-        @And("^click on search button$")
-        public void click_on_search_button(){
-            new ShopPage(driver).searchEnteredQuery();
-        }
+
+        @And("^enters \"([^\"]*)\" as name of product to search$")
+        public void entersAsNameOfProductToSearch(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
         @Then("^all products related to our request will be displayed$")
         public void check_whether_related_result_is_displayed(){
             Assert.assertTrue(SearchResultPage.getSearchResultTitle().contains("iphone12"));
         }
+
+
 }
