@@ -1,10 +1,13 @@
-package po.pages;
+package page_objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SearchResultPage extends AbstractPage {
     private static final By FIRST_ELEMENT_LOCATOR = By.xpath("//div[@data-product-id='100658112']");
+    private static final By SEARCH_RESULT_TITLE = By.xpath("//span[@class='search-result__title-key']");
+    private static WebDriver driver;
+
     public SearchResultPage(WebDriver driver){
         super(driver);
     }
@@ -13,4 +16,7 @@ public class SearchResultPage extends AbstractPage {
         return new ItemPage(driver);
     }
 
+    public static String getSearchResultTitle() {
+        return driver.findElement(By.xpath("//span[@class='search-result__title-key']")).getText();
+    }
 }

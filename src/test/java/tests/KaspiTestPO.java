@@ -1,13 +1,15 @@
+package tests;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import po.pages.GuidePage;
-import po.pages.HomePage;
-import po.pages.ItemPage;
-import po.pages.MapsPage;
+import page_objects.GuidePage;
+import page_objects.HomePage;
+import page_objects.ItemPage;
+import page_objects.MapsPage;
 
 import java.util.concurrent.TimeUnit;
 
